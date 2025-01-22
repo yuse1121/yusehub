@@ -76,6 +76,12 @@ def main():
             result = gacha()
             results.append(result)
         return results
+  def gacha_100x():
+        results = []
+        for _ in range(100):
+            result = gacha()
+            results.append(result)
+        return results
 
   def show_history():
         st.write("ガチャ履歴")
@@ -99,6 +105,9 @@ def main():
     results = gacha_10x()
         #for result in results:
             #st.write(result)
+
+  if st.button("100連ガチャを引く",key="gacha_100x_button"):
+    results = gacha_100x()
 
   # 履歴を表示するボタン
   if st.button("履歴を見る", key="history_button"):
